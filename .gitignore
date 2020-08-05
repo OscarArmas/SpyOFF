@@ -1,3 +1,5 @@
 #ignoramos los json de informacion
 *.json
 *.txt
+!requirements.txt
+*.pyc 
