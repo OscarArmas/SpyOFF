@@ -8,7 +8,7 @@ A system that allows you to track daily information of Nike’s sales and send e
 pip install -r requirements.txt
 
 ```
-In the first line have to write the email, and on the second line of password, this is for send the emails.
+You have to creathe a file called "credentials.txt" In the first line have to write the email, and on the second line of password, this is for send the emails.
 
 ## example of html generated for email
 
