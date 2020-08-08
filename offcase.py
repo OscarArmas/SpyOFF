@@ -4,9 +4,10 @@ import pandas as pd
 from datetime import date
 import os
 import unidecode
+import glob
 
 def update_full_sneaker_dic():
-    list_dataf = glob.glob("data/liquidacion/*.json")
+    list_dataf = glob.glob("data/Liquidacion/*.json")
     list_dataf = [z[-15:] for z in list_dataf]
     info= ReportTM('data/Liquidacion/')
     dataframes = []
@@ -20,7 +21,7 @@ def update_full_sneaker_dic():
     #df.loc[df['id'] == 'eff479e3-dab9-38e3-b814-4e8b49f371d6']
 
     df =df.drop_duplicates(subset=['title'])
-    df.to_csv('data/liquidacion/dic_products/productsLiq.csv', encoding='utf-8')
+    df.to_csv('data/Liquidacion/dic_products/productsLiq.csv', encoding='utf-8')
 
 
 def check_new_list_sneaker(day = None):
@@ -77,6 +78,7 @@ def check_new_list_sneaker(day = None):
 data = check_new_list_sneaker()
 print(data)
 if data:
-	send_email_Bcase1(data, ['saga_cth@hotmail.com'])
+    send_email_Bcase1(data, ['saga_cth@hotmail.com','cesar.saulo.u2@gmail.com','emanuelbarrera98@gmail.com','maylo360xd@gmail.com','ant_mk51@hotmail.com'])
+    #update_full_sneaker_dic()
 else:
 	print('No hubo cambios')
