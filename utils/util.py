@@ -17,7 +17,6 @@ def read_mail_credentials_():
     f.close()
     mail = lineas[0][:-1]
     passw = lineas[1][:]
-    print(mail,passw)
     return mail,passw
 
 def send_email(text,to_email):

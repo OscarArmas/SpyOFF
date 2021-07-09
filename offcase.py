@@ -9,7 +9,7 @@ import glob
 def update_full_sneaker_dic():
     list_dataf = glob.glob("data/Liquidacion/*.json")
     list_dataf = [z[-15:] for z in list_dataf]
-    info= ReportTM('data/Liquidacion/')
+    info= ReportTM_LIQ('data/Liquidacion/')
     dataframes = []
     #guardamos los dataframes
     for data in list_dataf:
@@ -78,7 +78,8 @@ def check_new_list_sneaker(day = None):
 data = check_new_list_sneaker()
 print(data)
 if data:
-    send_email_Bcase1(data, ['saga_cth@hotmail.com','cesar.saulo.u2@gmail.com','emanuelbarrera98@gmail.com','maylo360xd@gmail.com','ant_mk51@hotmail.com'])
-    #update_full_sneaker_dic()
+    #send_email_Bcase1(data, ['saga_cth@hotmail.com','cesar.saulo.u2@gmail.com','emanuelbarrera98@gmail.com','maylo360xd@gmail.com','ant_mk51@hotmail.com'])
+    send_email_Bcase1(data, ['saga_cth@hotmail.com'])
+    update_full_sneaker_dic()
 else:
 	print('No hubo cambios')
