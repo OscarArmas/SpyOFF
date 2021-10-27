@@ -6,6 +6,9 @@ from email.message import EmailMessage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from jinja2 import Environment
+import from dotenv import load_dotenv
+
+load_dotenv()
 
 def read_mail_credentials_():
     #leemos el archivo credentials txt que debe contener
@@ -20,7 +23,7 @@ def read_mail_credentials_():
     return mail,passw
 
 def send_email(text,to_email):
-    EMAIL_ADDRESS,EMAIL_PASSWORD = read_mail_credentials_()
+    EMAIL_ADDRESS,EMAIL_PASSWORD = (os.getenv('EMAIL_ADDRESS'), os.getenv('EMAIL_PASSWORD'))
     msg = EmailMessage()
     msg['Subject'] = 'Nike crawler Info'
     msg['From'] = EMAIL_ADDRESS
